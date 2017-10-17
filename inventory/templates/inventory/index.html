@@ -1,0 +1,9 @@
+{% if latest_product_list %}
+  <ul>
+  {% for product in latest_product_list %}
+      <li><a href="{% url 'inventory:detail' product.use.id product.id %}">{{product}}</a></li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No products have been entered</p>
+{% endif %}
